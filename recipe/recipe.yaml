@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.1.6"
+  version: "0.2.0"
 
 package:
   name: streamflow
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/s/streamflow/streamflow-${{ version }}.tar.gz
-  sha256: 0e0356323ecf910dd8ced3ceff1450ee30ec4b8a17b4a6cf39fdc8812659bc01
+  sha256: cc2d3eed5dbf3a83ca052d59c91b2da8b8e5cd6642aded7ae3b9f7f5d5748091
 
 build:
   number: 0
@@ -28,16 +28,20 @@ requirements:
   run:
     - python >=${{ python_min }},<4.0
     - aiohttp
-    - antlr4-python3-runtime <4.10
-    - asyncssh
+    - aiosqlite
+    - antlr4-python3-runtime =4.13.2
+    - asyncssh =2.24.1
     - bcrypt
+    - cachebox
     - cachetools
     - cwltool
     - jinja2
     - jsonref
     - jsonschema
     - kubernetes_asyncio >=22.6.2
+    - mslex
     - pandas
+    - yattag
 
 tests:
   - python:
